@@ -1,0 +1,14 @@
+body {
+    background-image: url("https://images.unsplash.com/photo-1444210971048-6130cf0c46cf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1352&q=80");
+}
+
+.img-thumbnail {
+    border:none !important;
+    background-color: rgba(0,0,0,0.5);
+    box-shadow:none !important;
+}
+
+.ui.form .field > label {
+    color: azure;
+}
+
