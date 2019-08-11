@@ -11,12 +11,12 @@ var data = [
     },
     {
         name: "Cloud's Rest",
-        image: "http://visitmckenzieriver.com/oregon/wp-content/uploads/2015/06/paradise_campground.jpg",
+        image: "https://images.unsplash.com/photo-1487730116645-74489c95b41b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
         description: "Year-round cabins, cottages and campgrounds in Delaware State Parks are perfect for getting away no matter the season. Or try a rustic tent site or equestrian site. Don't forget to book a ghost tour at Fort Delaware!"
     },
     {
         name: "Canyon Floor",
-        image: "https://img.sunset02.com/sites/default/files/image/2016/09/main/camping-arches.jpg",
+        image: "https://images.unsplash.com/photo-1476041800959-2f6bb412c8ce?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
         description: "Manages state parks with camping, hiking, swimming, walking and bike riding and more. There are opportunities for picnics, outdoor performances, areas available for company or family gatherings, historic sites, skating rinks, playgrounds, athletic fields, interpretive programs and much more."
     }
 ]
