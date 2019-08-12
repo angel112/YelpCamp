@@ -11,8 +11,14 @@
             <div class="container">
                 <div class="header item">YelpCamp</div>
                 <div class="right menu">
-                    <div class="item"><a href="/register">Signup</a></div>
-                    <div class="item"><a href="/login">Login</a></div>
+                    <% if(!currentUser){ %>
+                        <div class="item"><a href="/register">Signup</a></div>
+                        <div class="item"><a href="/login">Login</a></div>
+                    <% }else{ %>
+                        <div class="item"><a href="#">Signed In as <%= currentUser.username %></a></div>
+                        <div class="item"><a href="/logout">Logout</a></div>
+                    <% } %>
                 </div>
+                    
             </div>
         </div>
