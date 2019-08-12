@@ -17,3 +17,7 @@ img {
     max-height: 100%;
 }
 
+.block > p {
+    margin: 0 0;
+}
+
