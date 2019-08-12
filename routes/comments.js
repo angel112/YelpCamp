@@ -11,7 +11,7 @@ function isLoggedIn(req, res, next){
     res.redirect("/login");
 } 
 
-router.get("/comment", isLoggedIn, function(req, res){
+router.get("/comment/new", isLoggedIn, function(req, res){
     Campground.findById(req.params.id).populate("comments").exec(function(err, foundCamp){
         if(err){
             console.log(err)

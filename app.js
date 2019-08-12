@@ -1,6 +1,7 @@
 var express = require('express'),
     app = express(),
-    bodyParser = require('body-parser'), 
+    bodyParser = require('body-parser'),
+    methodOverride = require('method-override'), 
     mongoose = require('mongoose');
     passport = require('passport'),
     localStrategy = require('passport-local'),
@@ -12,7 +13,7 @@ var express = require('express'),
     commentRoute = require('./routes/comments'),
     indexRoute = require('./routes/index');
 
-//seedDB();
+// seedDB();
  
 //Database setup
 mongoose.connect("mongodb://localhost/yelp_camp", { useNewUrlParser: true });
@@ -25,6 +26,8 @@ app.use(require('express-session')({
     resave: false,
     saveUninitialized: false
 }));
+
+app.use(methodOverride("_method"));
 
 //PASSPORT CONFIGURATION
 app.use(passport.initialize());

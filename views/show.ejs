@@ -20,9 +20,16 @@
                         <h2 class="ui aligned center icon header">
                             <i class="tree icon"></i><%= camp.name %>
                         </h2>
+                        <p>Submitted By <%= camp.author.username %></p>
                     </div>
                     <div class="col-md-9">
                             <p><%= camp.description %></p>
+                            <% if(currentUser && camp.author.id.equals(currentUser._id)){ %>
+                                <a class="ui inverted orange button" href="/campgrounds/<%= camp._id %>/edit">Edit</a>
+                                <form style="display: inline" action="/campgrounds/<%= camp._id %>?_method=DELETE" method="POST">
+                                    <button class="ui inverted red button">Delete</button>
+                                </form>
+                            <% } %>
                             <h4 style="float: right">9.00$/night</h4>
                     </div>
                 </div>
@@ -33,7 +40,7 @@
                         <h2>Comments</h2>
                     </div>
                     <div class="col-md-4">
-                        <a class="btn btn-lg btn-success" href="/campgrounds/<%= camp._id %>/comment">Leave a Review</a>
+                        <a class="btn btn-lg btn-success" href="/campgrounds/<%= camp._id %>/comment/new">Leave a Review</a>
                     </div>
                 </div>
                 <hr>
@@ -41,23 +48,13 @@
                 <% camp.comments.forEach(function(comment){ %>
                     <div class="block">
                         <strong><%= comment.author.username %></strong>
-                        <span style="float: right">10 days ago</span>
+                        <span style="float: right"><%= comment.created.toDateString() %></span>
                         <p><%= comment.content %></p>                
                         <hr>
                     </div>
-                    
-                <% }) %>
-                
+                <% }) %>  
             </div>
         </div>
     </div>
-    
-    
-
-    
-    
 </div>
-
-
-
 <% include ./partials/footer %>
