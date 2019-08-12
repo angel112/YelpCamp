@@ -30,30 +30,30 @@ function seedDB(){
     Campground.remove({}, function(err){
         if(!err){
             console.log("Removed all database");
-            data.forEach(function(seed){
-                Campground.create(seed, function(err,campground){
-                    if(!err){
-                        console.log("Created a Campground");
-                        Comment.create(
-                            {
-                                content: "Wow, this is actually pretty great!!",
-                                author: "Dean Henderson"
-                            }, function(err, comment){
-                                if(err){
-                                    console.log(err);
-                                }
-                                else{
-                                    campground.comments.push(comment);
-                                    campground.save();
-                                    console.log("Created New Comment");
-                                }
+            // data.forEach(function(seed){
+            //     Campground.create(seed, function(err,campground){
+            //         if(!err){
+            //             console.log("Created a Campground");
+            //             Comment.create(
+            //                 {
+            //                     content: "Wow, this is actually pretty great!!",
+            //                     author: "Dean Henderson"
+            //                 }, function(err, comment){
+            //                     if(err){
+            //                         console.log(err);
+            //                     }
+            //                     else{
+            //                         campground.comments.push(comment);
+            //                         campground.save();
+            //                         console.log("Created New Comment");
+            //                     }
                                 
-                            }
-                        );
-                    }
-                });
+            //                 }
+            //             );
+            //         }
+            //     });
                 
-            })
+            // })
         }
     });
 }

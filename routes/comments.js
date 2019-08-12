@@ -1,7 +1,8 @@
 var express = require('express'),
     router = express.Router({mergeParams: true}),
     Campground = require('../models/campground'),
-    Comment = require('../models/comment');
+    Comment = require('../models/comment'),
+    User = require('../models/user');
 
 function isLoggedIn(req, res, next){
     if(req.isAuthenticated()){
@@ -30,6 +31,9 @@ router.post("/", isLoggedIn, function(req, res){
                     console.log(err);
                 }
                 else{
+                    foundComment.author.id = req.user._id;
+                    foundComment.author.username = req.user.username;
+                    foundComment.save();
                     foundCamp.comments.push(foundComment);
                     foundCamp.save();
                     res.redirect("/campgrounds/" + foundCamp._id);

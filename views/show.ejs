@@ -40,7 +40,7 @@
                 
                 <% camp.comments.forEach(function(comment){ %>
                     <div class="block">
-                        <strong><%= comment.author %></strong>
+                        <strong><%= comment.author.username %></strong>
                         <span style="float: right">10 days ago</span>
                         <p><%= comment.content %></p>                
                         <hr>
